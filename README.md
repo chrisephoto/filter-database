@@ -11,4 +11,5 @@ If you find this resource helpful and would like to support this project feel fr
 **2026-02-24**
 * Changelog started
 * Repo cloned from my wheel database as a starting point
+* Removed unnecessary features and added placeholder data
  
