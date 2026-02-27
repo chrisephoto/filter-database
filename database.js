@@ -9,8 +9,8 @@ dataset =
     "temp": "+50K",
     "tint": "-6",
     "images": [
-      {"before": "01.jpg", "after": "02.jpg"},
-      {"before": "03.jpg", "after": "04.jpg"}
+      {"before": "01.jpg", "after": "02.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "20mm"},
+      {"before": "03.jpg", "after": "04.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "21mm"}
     ],
     "links": {
       "Amazon": "https://amazon.com",
@@ -27,8 +27,8 @@ dataset =
     "temp": "+50K",
     "tint": "-6",
     "images": [
-      {"before": "01.jpg", "after": "02.jpg"},
-      {"before": "03.jpg", "after": "04.jpg"}
+      {"before": "01.jpg", "after": "02.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "22mm"},
+      {"before": "03.jpg", "after": "04.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "23mm"}
     ],
     "links": {
       "Amazon": "https://amazon.com",
@@ -46,8 +46,8 @@ dataset =
     "temp": "+50K",
     "tint": "-6",
     "images": [
-      {"before": "01.jpg", "after": "02.jpg"},
-      {"before": "03.jpg", "after": "04.jpg"}
+      {"before": "01.jpg", "after": "02.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "24mm"},
+      {"before": "03.jpg", "after": "04.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "25mm"}
     ],
     "links": {
       "Amazon": "https://amazon.com",
@@ -65,8 +65,8 @@ dataset =
     "temp": "+50K",
     "tint": "-6",
     "images": [
-      {"before": "01.jpg", "after": "02.jpg"},
-      {"before": "03.jpg", "after": "04.jpg"}
+      {"before": "01.jpg", "after": "02.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "26mm"},
+      {"before": "03.jpg", "after": "04.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "27mm"}
     ],
     "links": {
       "Amazon": "https://amazon.com",
@@ -84,8 +84,8 @@ dataset =
     "temp": "+50K",
     "tint": "-6",
     "images": [
-      {"before": "01.jpg", "after": "02.jpg"},
-      {"before": "03.jpg", "after": "04.jpg"}
+      {"before": "01.jpg", "after": "02.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "28mm"},
+      {"before": "03.jpg", "after": "04.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "29mm"}
     ],
     "links": {
       "Amazon": "https://amazon.com",

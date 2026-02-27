@@ -65,9 +65,25 @@ function initialize() {
       populateDetails(i);
     }
   }
+
+  // slider function
+  updateSliders();
 }
 
 // functions
+function updateSliders() {
+  const slidersAll = document.querySelectorAll("figure input");
+  for (const slider of slidersAll) {
+    slider.oninput = (event) => {
+      // event.target refers to the input element that was changed
+      const id = event.target.getAttribute("data-controls");
+      const img = document.getElementById(id);
+      newPosition = 100 - slider.value + "%";
+      img.style.setProperty('--slider-position', newPosition);
+    }
+  }
+}
+
 function populateFilters() {
     // create array of all unique brands from the database
     brandArray = [];
@@ -122,7 +138,7 @@ function populateDetails(i) {
   });
 
   //load new detail information
-  document.getElementById('filter-info-brand').innerHTML = `<a onclick="resetFilter();document.getElementById('input-brand').value = '${dataset[i].brand}';applyFilter();">${dataset[i].brand}</a>`;
+  document.getElementById('filter-info-brand').innerHTML = dataset[i].brand;
   document.getElementById('filter-info-model').innerHTML = dataset[i].model;
   document.getElementById('filter-info-type').innerHTML = dataset[i].type;
   document.getElementById('filter-info-exp').innerHTML = dataset[i].exp;
@@ -131,10 +147,27 @@ function populateDetails(i) {
   const target = document.getElementById('filter-images');
   for (let j = 0; j < dataset[i].images.length; j++) {
     target.innerHTML += `
-    <figure>
-    <img src="images/${dataset[i].id}/${dataset[i].images[j].before}" />
-    <img src="images/${dataset[i].id}/${dataset[i].images[j].after}" />
-    </figure>
+      <figure>
+        <div class="filter-images">
+          <div style="background-image: url('images/${dataset[i].id}/${dataset[i].images[j].before}')">
+            <span>No Filter</span>
+          </div>
+          <div id="${dataset[i].id}-${j}" style="background-image: url('images/${dataset[i].id}/${dataset[i].images[j].after}')">
+            <span>${dataset[i].brand} ${dataset[i].model}</span>	
+          </div>
+          <input data-controls="${dataset[i].id}-${j}" type="range" min="0" max="100" value="50" step="0.1">
+        </div>
+        <figcaption>
+          <div>
+            <span class="camera">${dataset[i].images[j].camera}</span>
+            <span class="lens">${dataset[i].images[j].lens}</span>
+          </div>
+          <div>
+            <span class="setting-1">${dataset[i].images[j].setting}</span>
+            <span class="setting-2">${dataset[i].images[j].value}</span>
+          </div>
+        </figcaption>
+      </figure>
     `
   }
   if (Object.keys(dataset[i].links).length > 0) {
@@ -153,6 +186,9 @@ function populateDetails(i) {
   }
   document.getElementById('filter-details').classList = 'open';
   document.title = 'filter Database - ' + dataset[i].brand + " " + dataset[i].model;
+
+  //update sliders
+  updateSliders();
 
   //update browser url/history
   var queryString = new URL(document.location);
@@ -218,13 +254,6 @@ function applyFilter() {
     else {
       filterName = dataset[i].brand + " " + dataset[i].model;
       if (filterName.toUpperCase().includes(filterSearch.toUpperCase())) {matchSearch = true;}
-      if (dataset[i].description.toUpperCase().includes(filterSearch.toUpperCase())) {matchSearch = true;}
-      for (let j = 0; j < dataset[i].tags.length; j++) {
-        if (dataset[i].tags[j].toUpperCase().includes(filterSearch.toUpperCase())) {matchSearch = true;}
-      }
-      for (let j = 0; j < dataset[i].construction.length; j++) {
-        if (dataset[i].construction[j].toUpperCase().includes(filterSearch.toUpperCase())) {matchSearch = true;}
-      }
     }
     
     //matchBrand

@@ -5,43 +5,43 @@
 
 :root {
   --padding: 2rem;
-  --radius-sm: 5px;
-  --radius-lg: 20px;
+  --radius-sm: 0px;
+  --radius-lg: 0px;
   --color-white: 255,255,255;
-  --color-black: 14,15,17;
+  --color-black: 16,16,16;
 }
 
 .theme-dark {
-  --color-accent-01: 229,57,53;
-  --color-accent-02: 255,89,89;
-  --color-background-01: 14,15,17;
-  --color-background-02: 24,26,28;
-  --color-background-03: 36,37,39;
+  --color-accent-01: 0,0,0;
+  --color-accent-02: 64,64,64;
+  --color-background-01: 16,16,16;
+  --color-background-02: 24,24,24;
+  --color-background-03: 36,36,36;
   --color-text: 255,255,255;
   --shadow: 0 4px 12px rgba(0,0,0,0.3), 0 0 1px 1px rgba(0,0,0,0.15);
 }
 
 .theme-light {
-  --color-accent-01: 229,57,53;
-  --color-accent-02: 255,89,89;
+  --color-accent-01: 0,0,0;
+  --color-accent-02: 64,64,64;
   --color-background-01: 255,255,255;
   --color-background-02: 241,241,241;
   --color-background-03: 225,225,225;
-  --color-text: 38,50,56;
+  --color-text: 48,48,48;
   --shadow: 0 4px 12px rgba(0,0,0,0.1), 0 0 1px 1px rgba(0,0,0,0.05);
 }
 
 /* element styles */
 
 a {
-  color: rgba(var(--color-accent-01),1.0);
+  color: rgba(var(--color-text),1.0);
   cursor: pointer;
   transition: color 0.2s;
   text-decoration: underline;
 }
 
 a:hover {
-  color: rgba(var(--color-accent-01),0.7);
+  color: rgba(var(--color-text),0.7);
 }
 
 h1 {
@@ -120,8 +120,8 @@ input, option, select {
   font-family: 'Jost', sans-serif;
 }
 
-input,
-select {
+form input,
+form select {
   background-color: rgb(var(--color-background-02));
   border-radius: var(--radius-lg);
   /*border: 1px solid rgba(var(--color-text),0.2);*/
@@ -133,8 +133,8 @@ select {
   transition: background-color 0.2s;
 }
 
-input:hover,
-select:hover {
+form input:hover,
+form select:hover {
   background-color: rgb(var(--color-background-03));
 }
 
@@ -325,6 +325,110 @@ tr:hover th {
   width: 100%;
 }
 
+#filter-details figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#filter-details figure .filter-images {
+	aspect-ratio: calc(16/9);
+	box-shadow: var(--shadow);
+  display: flex;
+	overflow: hidden;
+	position: relative;
+  width: 100%;
+}
+
+#filter-details figure .filter-images div {
+	align-items: flex-end;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	overflow: hidden;
+}
+
+#filter-details figure .filter-images div:nth-child(1) {
+  height: 100%;
+	justify-content: flex-start;
+  width: 100%;
+}
+
+#filter-details figure .filter-images div:nth-child(2) {
+	--slider-position: 50%;
+  height: 100%;
+	justify-content: flex-end;
+	-webkit-mask-image: linear-gradient(to left, black var(--slider-position), transparent var(--slider-position));
+	mask-image: linear-gradient(to left, black var(--slider-position), transparent var(--slider-position));
+  position: absolute;
+  width: 100%;
+}
+
+#filter-details figure .filter-images div span {
+  color: white;
+	font-size: 0.8rem;
+	padding: 1rem;
+  text-shadow: black 1px 0 10px;
+	text-wrap: nowrap;
+}
+
+#filter-details figure input {
+  -webkit-appearance: none;
+  background: none;
+	height: 100%;
+  outline: none;
+	overflow: hidden;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+#filter-details figure input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+	background: white;
+	cursor: grab;
+	height: 1000px;
+  width: 2px;
+}
+
+#filter-details figure input::-webkit-slider-thumb:active {
+	cursor: grabbing;
+}
+
+#filter-details figcaption {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: calc(var(--padding) / 2) 0 var(--padding) 0;
+}
+
+#filter-details figcaption div {
+	display: flex;
+	flex-direction: column;
+}
+
+#filter-details figcaption div:nth-child(1) {
+	text-align: left;
+}
+
+#filter-details figcaption div:nth-child(2) {
+	text-align: right;
+}
+
+#filter-details figcaption .camera,
+#filter-details figcaption .setting-1 {
+	font-size: 0.8rem;
+}
+
+#filter-details figcaption .lens,
+#filter-details figcaption .setting-2 {
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+
 #filter-details-message {
   align-items: center;
   display: flex;
@@ -343,16 +447,17 @@ tr:hover th {
 }
 
 #filter-details-close {
-  color: rgb(var(--color-white));
+  color: rgb(var(--color-text));
   cursor: pointer;
   padding: 0;
   position: absolute;
     right: 0;
     top: 0;
+  transition: color 0.2s;
 }
 
 #filter-details-close:hover {
-  background: rgb(var(--color-accent-02));
+  color: rgba(var(--color-text),0.7);
 }
 
 #filter-details-close > span {
@@ -367,6 +472,7 @@ tr:hover th {
   margin-bottom: 0;
 }
 
+/*
 #filter-images figure {
   aspect-ratio: calc(16/9);
   border-radius: var(--radius-sm);
@@ -391,6 +497,7 @@ tr:hover th {
   top: 0;
   width: 100%;
 }
+*/
 
 #filter-info {
   box-shadow: var(--shadow);

@@ -8,6 +8,10 @@ If you find this resource helpful and would like to support this project feel fr
 
 ## Changelog
 
+**2026-02-26**
+* Added image reveal slider
+* Updated CSS styles (border-radius, colors, etc)
+
 **2026-02-24**
 * Changelog started
 * Repo cloned from my wheel database as a starting point
