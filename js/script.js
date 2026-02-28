@@ -215,8 +215,8 @@ function closeDetails() {
   //remove class to hide modal
   document.getElementById('filter-details').classList = '';
 
-  document.querySelector('#filter-details-message').classList = '';
-  document.querySelector('#filter-details-container').classList = 'hidden';
+  //document.querySelector('#filter-details-message').classList = '';
+  //document.querySelector('#filter-details-container').classList = 'hidden';
 
   //update browser url/history
   document.title = 'filter Database';
