@@ -15,6 +15,14 @@ function initialize() {
     populateGrid(i)
   }
 
+  // update display count
+  if (document.querySelectorAll("#filter-list > div > figure").length == 0) {
+    document.getElementById("display-count").innerHTML = "No results found. <a onclick='resetFilter()'>Clear filters</a>."
+  }
+  else {
+    document.getElementById("display-count").innerHTML = "Displaying " + document.querySelectorAll("#filter-list > div > figure").length + " of " + dataset.length + " filters";
+  }
+
   // check cookies and apply preferences
   function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -149,10 +157,10 @@ function populateDetails(i) {
     target.innerHTML += `
       <figure>
         <div class="filter-images">
-          <div style="background-image: url('images/${dataset[i].id}/${dataset[i].images[j].before}')">
-            <span>No Filter</span>
+          <div style="background-image: url('images/${dataset[i].id}/${dataset[i].images[j].compPhoto}')">
+            <span>${dataset[i].images[j].compName}</span>
           </div>
-          <div id="${dataset[i].id}-${j}" style="background-image: url('images/${dataset[i].id}/${dataset[i].images[j].after}')">
+          <div id="${dataset[i].id}-${j}" style="background-image: url('images/${dataset[i].id}/${dataset[i].images[j].photo}')">
             <span>${dataset[i].brand} ${dataset[i].model}</span>	
           </div>
           <input data-controls="${dataset[i].id}-${j}" type="range" min="0" max="100" value="50" step="0.1">
@@ -171,21 +179,19 @@ function populateDetails(i) {
     `
   }
   if (Object.keys(dataset[i].links).length > 0) {
-    document.getElementById('filter-links-container').classList = '';
+    document.getElementById('filter-info-buy').innerHTML = '';
     for (let j = 0; j < Object.keys(dataset[i].links).length; j++) {
-      document.querySelector('#filter-links tbody').innerHTML += `
-      <tr>
-        <th>${Object.keys(dataset[i].links)[j]}</th>
-        <td>${Object.values(dataset[i].links)[j]}</td>
-      </tr>
-      `;
+      document.getElementById('filter-info-buy').innerHTML += `<a href="${Object.values(dataset[i].links)[j]}">${Object.keys(dataset[i].links)[j]}</a>`;
+      if (j < Object.keys(dataset[i].links).length - 1) {
+          document.getElementById('filter-info-buy').innerHTML += `, `
+      }
     }    
   }
   else {
-    document.getElementById('filter-links-container').classList = 'hidden';
+    document.getElementById('filter-info-buy').innerHTML = 'N/A';
   }
   document.getElementById('filter-details').classList = 'open';
-  document.title = 'filter Database - ' + dataset[i].brand + " " + dataset[i].model;
+  document.title = 'Filter Database - ' + dataset[i].brand + " " + dataset[i].model;
 
   //update sliders
   updateSliders();
@@ -280,6 +286,14 @@ function applyFilter() {
     populateGrid(filterIndexes[j])
   }
 
+  // update display count
+  if (document.querySelectorAll("#filter-list > div > figure").length == 0) {
+    document.getElementById("display-count").innerHTML = "No results found. <a onclick='resetFilter()'>Clear filters</a>."
+  }
+  else {
+    document.getElementById("display-count").innerHTML = "Displaying " + document.querySelectorAll("#filter-list > div > figure").length + " of " + dataset.length + " filters";
+  }
+
   //update browser url/history
   var queryString = new URL(document.location);
   if (filterSearch){queryString.searchParams.set('q', filterSearch)};
@@ -295,6 +309,14 @@ function resetFilter() {
   //populate filter list
   for (let i = 0; i < dataset.length; i++) {
     populateGrid(i)
+  }
+
+  // update display count
+  if (document.querySelectorAll("#filter-list > div > figure").length == 0) {
+    document.getElementById("display-count").innerHTML = "No results found. <a onclick='resetFilter()'>Clear filters</a>."
+  }
+  else {
+    document.getElementById("display-count").innerHTML = "Displaying " + document.querySelectorAll("#filter-list > div > figure").length + " of " + dataset.length + " filters";
   }
   
   //reset inputs

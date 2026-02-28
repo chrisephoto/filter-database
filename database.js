@@ -9,8 +9,8 @@ dataset =
     "temp": "+50K",
     "tint": "-6",
     "images": [
-      {"before": "01.jpg", "after": "02.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "20mm"},
-      {"before": "03.jpg", "after": "04.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "21mm"}
+      {"compName": "No Filter", "compPhoto": "01.jpg", "photo": "02.jpg", "camera": "Nikon D300", "lens": "AF-S NIKKOR 20mm f/1.8G ED", "setting": "Focal Length", "value": "20mm"},
+      {"compName": "No Filter", "compPhoto": "03.jpg", "photo": "04.jpg", "camera": "Nikon D300", "lens": "AF NIKKOR 50mm f/1.8D", "setting": "Focal Length", "value": "50mm"}
     ],
     "links": {
       "Amazon": "https://amazon.com",
@@ -27,8 +27,8 @@ dataset =
     "temp": "+50K",
     "tint": "-6",
     "images": [
-      {"before": "01.jpg", "after": "02.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "22mm"},
-      {"before": "03.jpg", "after": "04.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "23mm"}
+      {"compName": "No Filter", "compPhoto": "01.jpg", "photo": "02.jpg", "camera": "Nikon D300", "lens": "AF-S NIKKOR 20mm f/1.8G ED", "setting": "Focal Length", "value": "20mm"},
+      {"compName": "No Filter", "compPhoto": "03.jpg", "photo": "04.jpg", "camera": "Nikon D300", "lens": "AF NIKKOR 50mm f/1.8D", "setting": "Focal Length", "value": "50mm"}
     ],
     "links": {
       "Amazon": "https://amazon.com",
@@ -46,8 +46,8 @@ dataset =
     "temp": "+50K",
     "tint": "-6",
     "images": [
-      {"before": "01.jpg", "after": "02.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "24mm"},
-      {"before": "03.jpg", "after": "04.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "25mm"}
+      {"compName": "No Filter", "compPhoto": "01.jpg", "photo": "02.jpg", "camera": "Nikon D300", "lens": "Sigma 10-20mm f/4-5.6 EX DC HSM", "setting": "Focal Length", "value": "17mm"},
+      {"compName": "No Filter", "compPhoto": "03.jpg", "photo": "04.jpg", "camera": "Nikon D300", "lens": "AF NIKKOR 50mm f/1.8D", "setting": "Focal Length", "value": "50mm"}
     ],
     "links": {
       "Amazon": "https://amazon.com",
@@ -65,8 +65,8 @@ dataset =
     "temp": "+50K",
     "tint": "-6",
     "images": [
-      {"before": "01.jpg", "after": "02.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "26mm"},
-      {"before": "03.jpg", "after": "04.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "27mm"}
+      {"compName": "No Filter", "compPhoto": "01.jpg", "photo": "02.jpg", "camera": "Nikon D300", "lens": "AF-S DX NIKKOR 18-55mm f/3.5-5.6G", "setting": "Focal Length", "value": "34mm"},
+      {"compName": "No Filter", "compPhoto": "03.jpg", "photo": "04.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 300mm f/4E PF ED VR", "setting": "Focal Length", "value": "300mm"}
     ],
     "links": {
       "Amazon": "https://amazon.com",
@@ -84,8 +84,8 @@ dataset =
     "temp": "+50K",
     "tint": "-6",
     "images": [
-      {"before": "01.jpg", "after": "02.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "28mm"},
-      {"before": "03.jpg", "after": "04.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 28mm f/1.4E ED", "setting": "Focal Length", "value": "29mm"}
+      {"compName": "No Filter", "compPhoto": "01.jpg", "photo": "02.jpg", "camera": "Nikon D780", "lens": "AF-S NIKKOR 58mm f/1.4G", "setting": "Focal Length", "value": "58mm"},
+      {"compName": "No Filter", "compPhoto": "03.jpg", "photo": "04.jpg", "camera": "Nikon D300", "lens": "Sigma 10-20mm f/4-5.6 EX DC HSM", "setting": "Focal Length", "value": "13mm"}
     ],
     "links": {
       "Amazon": "https://amazon.com",

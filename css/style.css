@@ -95,6 +95,10 @@ footer {
   text-align: center;
 }
 
+footer #display-count {
+  margin-bottom: var(--padding);
+}
+
 header {
   align-items: center;
   box-shadow: var(--shadow);
@@ -304,7 +308,7 @@ tr:hover th {
 #filter-details {
   background: rgba(var(--color-background-01),1.0);
   box-sizing: border-box;
-  flex: 0 0 calc(50vw - 12.5ch - (var(--padding) / 2));
+  flex: 1 0 0;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
@@ -443,7 +447,6 @@ tr:hover th {
 #filter-details-container {
   margin: 0 auto;
   position: relative;
-  max-width: 100ch;
 }
 
 #filter-details-close {
@@ -514,21 +517,12 @@ tr:hover th {
   text-align: right;
 }
 
-#filter-links-container {
-  margin-top: var(--padding);
+#filter-images figure:last-child figcaption {
+	margin-bottom: 0;
 }
 
-#filter-links {
-  width: 100%;
-}
-
-#filter-links td {
-  text-align: left;
-  width: 50%;
-}
-
-#filter-links th {
-  text-align: right;
+#filter-select {
+  flex: 1 0 0;
 }
 
 /* generic classes */
@@ -551,29 +545,34 @@ tr:hover th {
   }
   #filters {
     flex: 0 0 25ch;
-    padding: var(--padding) calc(var(--padding) / 2);
+    padding: var(--padding) calc(var(--padding) / 2) calc(var(--padding) / 2) calc(var(--padding) / 2);
   }
   #filters form {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+  }
+  #filters form #input-search {
+    grid-column: 1;
   }
   #filter-list {
-    padding: var(--padding) calc(var(--padding) / 2);
+    padding: calc(var(--padding) / 2) calc(var(--padding) / 2) var(--padding) calc(var(--padding) / 2);
     overflow-x: hidden;
     overflow-y: auto;
   }
   #filter-list > div {
-    grid-template-columns: repeat(auto-fill,minmax(18ch,1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
 /* large screens */
 
-@media only screen and (min-width: 1880px) {
+@media only screen and (min-width: 1680px) {
+  #filter-info caption {
+    display: none;
+  }
   #filter-details {
     background: transparent;
     padding: var(--padding) calc(var(--padding) / 2);
     position: initial;
-    max-width: 100ch;
     width: 100%;
   }
   #filter-details-close {

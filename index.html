@@ -14,31 +14,36 @@
     </header>
   
     <main>
-      <section id="filters">
-        <form id="filters-form" action="javascript:applyFilter()">
-          <label for="input-search">Search</label>
-          <input id="input-search" type="search" placeholder="Search"/>
-          <label for="input-brand">Brand</label>
-          <select id="input-brand">
-            <option value="" selected>All Brands</option>
-          </select>
-          <label for="input-type">Type</label>
-          <select id="input-type">
-            <option value="" selected>All Types</option>
-            <option value="Diffusion">Diffusion</option>
-            <option value="Flare">Flare</option>
-            <option value="Neutral Density">Neutral Density</option>
-            <option value="Polarizer">Polarizer</option>
-            <option value="Special Effect ">Special Effect</option>
-          </select>
-          <input type="reset" value="Reset" onclick="resetFilter()"/>
-          <input type="button" value="Apply" onclick="applyFilter()"/>
-        </form>
-      </section>
-      <section id="filter-list" class="grid">
-        <div></div>
-        <footer>Made by <a href="//www.threads.net/@chrisephoto">@chrisphoto</a> | <a href="//github.com/chrisephoto/filter-database">View on Github</a></footer>
-      </section>
+      <div id="filter-select">
+        <section id="filters">
+          <form id="filters-form" action="javascript:applyFilter()">
+            <label for="input-search">Search</label>
+            <input id="input-search" type="search" placeholder="Search"/>
+            <label for="input-brand">Brand</label>
+            <select id="input-brand">
+              <option value="" selected>All Brands</option>
+            </select>
+            <label for="input-type">Type</label>
+            <select id="input-type">
+              <option value="" selected>All Types</option>
+              <option value="Diffusion">Diffusion</option>
+              <option value="Flare">Flare</option>
+              <option value="Neutral Density">Neutral Density</option>
+              <option value="Polarizer">Polarizer</option>
+              <option value="Special Effect ">Special Effect</option>
+            </select>
+            <input type="reset" value="Reset" onclick="resetFilter()"/>
+            <input type="button" value="Apply" onclick="applyFilter()"/>
+          </form>
+        </section>
+        <section id="filter-list" class="grid">
+          <div></div>
+          <footer>
+            <div id="display-count"></div>
+            <div id="copyright">Made by <a href="//www.threads.net/@chrisephoto">@chrisphoto</a> | <a href="//github.com/chrisephoto/filter-database">View on Github</a></div>
+          </footer>
+        </section>
+      </div>
       <section id="filter-details">
         <div id="filter-details-message">
           <h2>Select a filter to view details.</h2>
@@ -49,7 +54,7 @@
           </div>
           <div id="filter-details-info">
             <table id="filter-info">
-              <caption>Information</caption>
+              <caption>Filter Details</caption>
               <tbody>
                 <tr>
                   <th>Brand</th>
@@ -75,17 +80,13 @@
                   <th>Tint Impact</th>
                   <td id="filter-info-tint">N/A</td>
                 </tr>
+                <tr>
+                  <th>Where to Buy</th>
+                  <td id="filter-info-buy">N/A</td>
+                </tr>
               </tbody>
             </table>
-            <h2>Gallery</h2>
             <div id="filter-images"></div>
-            <div id="filter-links-container">
-              <table id="filter-links">
-                <caption>Where to buy</caption>
-                <tbody>
-                </tbody>
-              </table>
-            </div>
           </div>
         </div>
       </section>

@@ -8,6 +8,15 @@ If you find this resource helpful and would like to support this project feel fr
 
 ## Changelog
 
+**2026-02-28**
+* Reorganized layout to give more space to details pane
+* Renamed database keys to support alternative filter comparisons
+* Updated script.js to display these new variables rather than fixed text
+* Cleaned up details pane layout
+* Added count of displayed and total wheels at bottom of grid
+
+*Note: Database is ready to populate with real information*
+
 **2026-02-26**
 * Added image reveal slider
 * Updated CSS styles (border-radius, colors, etc)
