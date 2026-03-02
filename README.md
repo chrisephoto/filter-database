@@ -8,6 +8,9 @@ If you find this resource helpful and would like to support this project feel fr
 
 ## Changelog
 
+**2026-03-02**
+* Adjusted CSS breakpoints and mobile padding
+
 **2026-02-28**
 * Reorganized layout to give more space to details pane
 * Renamed database keys to support alternative filter comparisons

@@ -462,6 +462,7 @@ tr:hover th {
 #filter-details-container {
   margin: 0 auto;
   position: relative;
+  max-width: 100ch;
 }
 
 #filter-details-close {
@@ -536,10 +537,6 @@ tr:hover th {
 	margin-bottom: 0;
 }
 
-#filter-select {
-  flex: 1 0 0;
-}
-
 /* generic classes */
 
 .hidden {
@@ -576,16 +573,22 @@ tr:hover th {
   #filter-list > div {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
+  #filter-select {
+    flex: 1 0 0;
+  }
 }
 
 /* large screens */
 
-@media only screen and (min-width: 1680px) {
+@media only screen and (min-width: 1880px) {
   #filter-info caption {
     display: none;
   }
   #filter-details-spacer {
     display: block;
+  }
+  #filter-details-container {
+    max-width: none;
   }
   #filter-details {
     bottom: 0;
